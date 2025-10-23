@@ -36,113 +36,60 @@ e-commerce-system/
 
 ## Part 2: API Research
 
-### 1. API Research:
-
-Research and analyze the Dummy JSON Products API .
-You will be implementing features that interact with this API.
-Project Planning:
-
-### 2. Based on your API research, plan the structure of your project. You will need to create API requests, handle errors, and display product information.
-
-Before you begin coding, create a project plan and outline the steps you’ll take to implement the API interactions and display product data.
-Ensure you have thoroughly read through the requirements for the project below <i>before</i> you begin planning it.
+- [ ] Research and analyze the Dummy JSON Products API.
+- [ ] Plan your project structure based on the API data.
+- [ ] Outline steps for API requests, error handling, and product display.
+- [ ] Review all project requirements before coding begins.
 
 ## Part 3: Implementation
 
-### 1. Develop Product Class:
+### Product Class
 
-#### Product Base Class (`Product.ts`):
+- [x] Create `Product.ts` with all relevant properties from the API.
+- [x] Implement the `displayDetails()` method.
+- [x] Implement the `getPriceWithDiscount()` method.
 
-- Define a Product class that includes the appropriate properties based on data provided in the API response.
-- Include methods `displayDetails()` and `getPriceWithDiscount()`, and implement them appropriately based on the provided data.
+### Utilities
 
-### 2. Implement Utilities:
+- [ ] Create `discountCalculator.ts` and define `calculateDiscount()` that returns the discounted dollar amount.
+- [ ] Create `taxCalculator.ts` and define `calculateTax()` that returns the taxed amount.
+- [ ] Apply a default tax rate of **4.75%**.
+- [ ] Apply a **3%** tax rate for products in the "groceries" category.
 
-#### Discount Calculator Module (`discountCalculator.ts`):
+### Asynchronous Operations
 
-- Create a `calculateDiscount()` function to handle discount calculations for products.
-- This function should return the <i>dollar amount</i> that a product is discounted by. For example, if a product costs $100 and has a 10% discount, the function should return $90.
+- [ ] Create `apiService.ts` to handle API requests using `async/await` and Promises.
+- [ ] Implement error handling using `try/catch`.
 
-#### Tax Calculator Module (taxCalculator.ts):
+### Error Handling
 
-- Create a `calculateTax()` function to handle tax calculations for products.
-- This function should return the dollar amount that a product is taxed at. For example, if a product costs $100 and is taxed at 10%, $90.
-- Note that the product data returned from the API does not include a `taxPercentage` field like it includes a `discountPercentage` field.
-- Apply a default standard tax rate of <b>4.75%</b> to each product; however, products with a category of “groceries” should only be taxed at <b>3%</b>.
+- [ ] Create `errorHandler.ts` and define a custom error class.
+- [ ] Add functions to handle various error types gracefully.
 
-### 3. Handle Asynchronous Operations:
+### Main App
 
-#### API Service (`apiService.ts`):
+- [ ] In `main.ts`, import `Product`, utilities, and the API service.
+- [ ] Fetch and create `Product` instances using API data.
+- [ ] Display product information in the console or UI.
+- [ ] Demonstrate OOP, async flows, and error handling.
 
-- Create API requests using `async/await` and Promises.
-- Implement functions to fetch product data and handle errors using `try/catch`.
+## Part 4: Testing & Finalizing
 
-### 4. Error Handling Utility:
+- [ ] Test and debug all functionalities.
+- [ ] Fix any TypeScript or runtime errors.
 
-#### Error Handler Module (`errorHandler.ts`):
+## Part 5: (Optional) User Interface
 
-Implement a custom error class and functions to handle different types of errors gracefully.
+- [ ] Ensure the project is fully functional before starting the UI.
+- [ ] Create a basic HTML user interface.
+- [ ] Add event listeners to handle user input and interactions.
+- [ ] Update the UI dynamically based on API responses.
+- [ ] Style the interface using CSS.
 
-### 5. Create the Main Application:
+## Deliverables
 
-#### Main Entry File (`index.ts`):
-
-- Import the product classes, tax calculator, and API service.
-- Create instances of `Product` by fetching product data from the API.
-- Use asynchronous functions to fetch product data and display it.
-- Demonstrate error handling and OOP principles in action.
-
-### Part 4: Testing and Finalizing
-
-#### 1. Compile Your Code:
-
-Use TypeScript to compile your code:
-
-`npx tsc`
-
-#### 2. Run Your Application:
-
-Use Node.js to run your compiled JavaScript code:
-
-`node dist/index.js`
-
-#### 3. Test and Debug:
-
-- Test all functionalities to ensure they work as expected.
-- Check for any TypeScript errors or runtime issues and resolve them.
-
-### Part 5: (Optional) User Interface
-
-#### Ensure the project is fully functional before creating a user interface.
-
-With any additional time, you can implement a user interface for the application. Creating an interface will allow you to demonstrate your project in a more visually appealing way, as well as include it within your portfolio.
-
-#### 1. Create User Interface:
-
-- Create a basic user interface using HTML.
-
-#### 2. Implement User Interaction:
-
-- Add event listeners to handle user input and interactions.
-- Update the UI based on user actions and API responses.
-
-#### 3. Style the UI:
-
-- Use CSS to style the user interface.
-
-### Deliverables
-
-You must submit the following items via Canvas:
-
-#### 1. GitHub Repository:
-
-- Link to your GitHub repository with the complete project code.
-- Ensure your repository is publicly accessible or that the appropriate permissions are granted for review.
-
-#### 2. Reflection Document:
-
-Write a reflection of roughly 300 words addressing:
-
-- How you implemented TypeScript features and OOP principles.
-- The challenges you encountered and how you overcame them.
-- How you handled asynchronous operations and error management.
+- [ ] Submit your GitHub repository link with the complete project code.
+- [ ] Write a 300-word reflection covering:
+  - How TypeScript features and OOP principles were implemented.
+  - The challenges you faced and how you overcame them.
+  - How asynchronous operations and errors were handled.
