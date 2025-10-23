@@ -20,8 +20,7 @@ function render(products: Product[]): void {
           <p><strong>Description:</strong> ${prod.description}</p>
           <p><strong>Category:</strong> ${prod.category}</p>
           <p class="${total}"><strong>List Price:</strong> $${prod.price.toFixed(2)}</p>
-          <p><strong>Discounted:</strong> $${total.toFixed(2)} (${prod.discountPercentage ?? 0}% off)</p>
-          <p><strong>Total (with 8% tax):</strong> $${total.toFixed(2)}</p>
+          <p><strong>Discounted Total:</strong> $${total.toFixed(2)} (${prod.discountPercentage ?? 0}% off)</p>
         </div>
       `;
   })

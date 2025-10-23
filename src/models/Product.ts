@@ -29,7 +29,8 @@ export default class Product {
     }
 
     getPriceWithDiscount(): number {
-        return this.price * (0.08 + 1);
+        const discount = (this.discountPercentage ?? 0) / 100;
+        return this.price * (1 - discount);
     }
 }
 
