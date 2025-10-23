@@ -51,10 +51,10 @@ e-commerce-system/
 
 ### Utilities
 
-- [ ] Create `discountCalculator.ts` and define `calculateDiscount()` that returns the discounted dollar amount.
-- [ ] Create `taxCalculator.ts` and define `calculateTax()` that returns the taxed amount.
-- [ ] Apply a default tax rate of **4.75%**.
-- [ ] Apply a **3%** tax rate for products in the "groceries" category.
+- [x] Create `discountCalculator.ts` and define `calculateDiscount()` that returns the discounted dollar amount.
+- [x] Create `taxCalculator.ts` and define `calculateTax()` that returns the taxed amount.
+- [x] Apply a default tax rate of **4.75%**.
+- [x] Apply a **3%** tax rate for products in the "groceries" category.
 
 ### Asynchronous Operations
 
