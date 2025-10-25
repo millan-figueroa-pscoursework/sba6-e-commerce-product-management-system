@@ -5,7 +5,7 @@
 // }
 
 
-class NetworkError extends Error {
+export class NetworkError extends Error {
     constructor(message: string) {
         super(message); // call the built-in Error constructor
         this.name = "NetworkError";
@@ -13,7 +13,7 @@ class NetworkError extends Error {
 }
 
 
-class DataError extends Error {
+export class DataError extends Error {
     constructor(message: string) {
         super(message); // call the built-in Error constructor
         this.name = "DataError";
