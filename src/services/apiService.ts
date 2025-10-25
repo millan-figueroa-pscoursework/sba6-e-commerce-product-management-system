@@ -23,4 +23,23 @@ export async function fetchProductsSafe(limit = 8): Promise<Product[]> {
     if (!data || !Array.isArray(data.products)) {
         throw new DataError("Received malformed product list.");
     }
+    const products: Product[] = data.products
+        .filter((p: any) => typeof p?.id === "number" && typeof p?.title === "string")
+        .map(
+            (p: any) =>
+                new Product(
+                    p.id,
+                    p.title,
+                    String(p.description ?? ""),
+                    String(p.category ?? "Unknown"),
+                    Number(p.price ?? 0),
+                    Number(p.discountPercentage ?? 0)
+                )
+        );
+
+    if (products.length === 0) {
+        throw new DataError("No products available to display.");
+    }
+
+    return products;
 }
