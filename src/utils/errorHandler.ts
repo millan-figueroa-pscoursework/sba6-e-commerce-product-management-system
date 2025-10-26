@@ -1,44 +1,36 @@
-// interface Order {
-//     productId: string,
-//     quantity: number,
-//     price: number
-// }
 
+export class APIError extends Error {
+    statusCode: number;
+    constructor(message: string, statusCode: number) {
+        super(message);
+        this.statusCode = statusCode;
+    }
 
-export class NetworkError extends Error {
-    constructor(message: string) {
-        super(message); // call the built-in Error constructor
-        this.name = "NetworkError";
+}
+
+export class ValidationError extends Error {
+    statusCode: number;
+
+    constructor(message: string, statusCode = 400) {
+        super(message);
+        this.name = 'ValidationError';
+        this.statusCode = statusCode;
     }
 }
 
 
-export class DataError extends Error {
-    constructor(message: string) {
-        super(message); // call the built-in Error constructor
-        this.name = "DataError";
-    }
-}
-
-
-export function logError(error: unknown): void {
-    if (error instanceof Error) {
-        console.error(`[${error.name}] ${error.message}`);
+export function handleAPIError(error: APIError) {
+    if (error instanceof APIError) {
+        console.error('API Error:', error.message, 'Status Code:', error.statusCode);
     } else {
-        console.error("[Unknown Error]", error);
+        console.error('An unexpected error occurred:', error);
     }
 }
 
-
-export function getUserMessage(error: unknown): string {
-    if (error instanceof NetworkError) {
-        return "Unable to connect to the server. Please check your internet connection.";
-    }
-    if (error instanceof DataError) {
-        return "There was a problem loading product data. Please try again later.";
-    }
-    if (error instanceof Error) {
-        return "Something went wrong. Please try again.";
-    }
-    return "An unknown error occurred.";
+export function handleValidationError(error: ValidationError) {
+    console.error(`[Validation Error] ${error.message}`);
+    return {
+        status: error.statusCode,
+        message: error.message
+    };
 }
