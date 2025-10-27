@@ -33,11 +33,11 @@ function renderProducts(products: Product[]): void {
     .join("");
 }
 
-
 try {
   const products: Product[] = await fetchProducts();
   if (products) renderProducts(products);
-
 } catch (error) {
   console.error("Error loading products:", error);
 }
+
+
