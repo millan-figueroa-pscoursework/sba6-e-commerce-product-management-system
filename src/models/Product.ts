@@ -1,11 +1,3 @@
-// interface product {
-//     id: number;
-//     title: string;
-//     description: string;
-//     category: string;
-//     price: number;
-//     discountPercentage: number;
-// }
 
 export default class Product {
     id: number;

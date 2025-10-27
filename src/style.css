@@ -8,31 +8,48 @@ html, body {
 }
 
 body {
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  background-color: #f7f5f5;
+  font-family:'Trebuchet MS', sans-serif;
+  background-color: #ebebeb;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
 header {
-  padding: 25px;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 45px;
   background-color: #f7f5f5;
-  color: #444244;
+  color: #838383;
   font-size: .8rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .container {
   flex: 1;
-  padding: 15px;
+  margin-top: 20;
+  padding: 40px 30px 40px 30px;
+  margin: 40px;
 }
 
 
 .product-card {
-  padding-block: 15px;
-  border-bottom: 1.5px solid white;
+  background-color: #f7f5f5;
+  padding-block: 25px;
+  padding-inline: 250px;
+  margin:20px;
+  /* border-bottom: 1.5px solid white; */
   font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+  border: solid 1px #444244;
+}
+
+.product-card p {
+  padding:4px;
 }
 
 .discounted {
@@ -41,9 +58,8 @@ header {
 
 footer {
   background-color: #4d4d4d;
-  font-size: .7rem;
   color: #8fffd4;
-  border-top: 2px solid white;
+  font-size: .7rem;
   padding: 25px;
   display: flex;
   align-items: center;

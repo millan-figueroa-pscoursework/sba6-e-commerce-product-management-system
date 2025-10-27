@@ -3,7 +3,7 @@ import { APIError, handleAPIError } from "../utils/errorHandler";
 
 const BASE_URL = "https://dummyjson.com/products";
 
-export async function fetchProducts(limit: number = 30) {
+export async function fetchProducts(limit: number = 10) {
     try {
 
         const response = await fetch(`${BASE_URL}?limit=${limit}`);
