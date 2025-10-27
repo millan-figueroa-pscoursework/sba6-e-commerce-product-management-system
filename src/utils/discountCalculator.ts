@@ -1,4 +1,4 @@
-import Product from '../models/Product.ts'
+import Product from '../models/Product';
 import { ValidationError } from '../utils/errorHandler';
 
 export function calculateDiscount(product: Product): number {
@@ -7,5 +7,6 @@ export function calculateDiscount(product: Product): number {
     }
 
     const discountRate = (product.discountPercentage ?? 0) / 100;
-    return product.price * discountRate;
+    const discountedPrice = product.price * (1 - discountRate);
+    return discountedPrice;
 }
