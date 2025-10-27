@@ -1,10 +1,12 @@
 # SBA 6: TypeScript & Advanced JavaScript
 
-## Overview
+## Reflection
 
-In this assessment, you will apply the skills you’ve developed throughout the TypeScript and Advanced JavaScript module to build a functional, real-world application. This project will test your understanding of <b>TypeScript features</b>, <b>object-oriented programming (OOP) principles</b>, <b>asynchronous operations</b>, <b>error handling</b>, and <b>API interaction</b>.
+In this project I built a small web app that shows products, their prices, discounts, and the total cost with tax using Typescript and styled it with vanilla CSS. I used classes to represent each product, each have their own properties like price, category, and discount percentage. A Product class can also have its own functions, like one that calculates the tax and discounted price. Using classes made it easier to keep the code organized and make sure every product behaved the same way.
 
-You will create an <b>E-commerce Product Management System</b> using TypeScript. The final deliverable will include a GitHub repository with your project and a written reflection on your approach and the challenges you faced.
+One of the hardest parts was figuring out how to handle the data that comes from the API. The data arrives as plain objects and not as my Product class, so I had to adjust my functions to accept simpler data shapes so Typescript wouldn't scream at me.
+
+Another tricky thing was dealing with asynchronous operations. When I fetch products from the API, the browser has to wait for the server to respond, but it doesn’t stop everything else from running. I used async and await so the code waits properly before trying to show the products. I also used try and catch blocks to handle any errors that happen while fetching data, so if something goes wrong, the app shows a helpful message instead of crashing.
 
 ## Part 1: Set Up Your Project:
 
@@ -93,9 +95,3 @@ e-commerce-system/
   - How TypeScript features and OOP principles were implemented.
   - The challenges you faced and how you overcame them.
   - How asynchronous operations and errors were handled.
-
-In this project I built a small web app that shows products, their prices, discounts, and the total cost with tax using Typescript and vanilla CSS. I used classes to represent each product, which is part of OOP. Each product has its own properties like price, category, and discount percentage, and it can also have its own functions, like one that calculates the tax and discounted price. Using classes made it easier to keep the code organized and make sure every product behaved the same way.
-
-One of the hardest parts was figuring out how to handle the data that comes from the API. The data arrives as plain objects and not as my Product class, so I had to adjust my functions to accept simpler data shapes so Typescript wouldn't scream at me.
-
-Another tricky thing was dealing with asynchronous operations. When I fetch products from the API, the browser has to wait for the server to respond, but it doesn’t stop everything else from running. I used async and await so the code waits properly before trying to show the products. I also used try and catch blocks to handle any errors that happen while fetching data, so if something goes wrong, the app shows a helpful message instead of crashing.
