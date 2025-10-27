@@ -1,7 +1,9 @@
 import Product from '../models/Product';
 import { ValidationError } from '../utils/errorHandler';
 
-export function calculateTax(product: Product): number {
+type Taxable = { price: number; category: string };
+
+export function calculateTax(product: Taxable): number {
     if (!product || typeof product.price !== 'number' || product.price < 0) {
         throw new ValidationError('Invalid product data: price must be a positive number.');
     }
