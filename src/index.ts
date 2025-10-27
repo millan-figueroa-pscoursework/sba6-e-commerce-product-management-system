@@ -1,7 +1,7 @@
 import "./style.css";
 import Product from "./models/Product";
+import { calculateTax } from "./utils/taxCalculator";
 import { fetchProducts } from "./services/apiService";
-import { APIError, ValidationError } from "./utils/errorHandler";
 
 const container = document.querySelector<HTMLDivElement>('#app')!;
 
@@ -23,5 +23,5 @@ function renderProducts(products: Product[]): void {
     .join("");
 }
 
-
+fetchProducts();
 
